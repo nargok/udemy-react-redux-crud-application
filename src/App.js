@@ -1,31 +1,21 @@
 import React from 'react';
 
-// class App extends Component {
-//   render() {
-//     return (
-//       <React.Fragment>
-//         <label htmlFor="bar">bar</label>
-//         <input type="text" onChange={() => {console.log("I am changed!")}}/>
-//       </React.Fragment>
-//     );
-//   }
-// }
-
 const App = () => {
   return (
     <div>
-      <Cat />
-      <Cat />
-      <Cat />
-      <Cat />
-      <Cat />
-      <Cat />
+      <User name={"Taro"} age={10}/>
+      <User name={"Hanako"} age={20}/>
+      <User name={"Jiro"}/>
     </div>
   )
 }
 
-const Cat = () => {
-  return <div>Meow!</div>
+const User = (props) => {
+  return <div>Hi , I am {props.name}, and {props.age} years old!</div>
+}
+
+User.defaultProps = {
+  age: 1
 }
 
 export default App;
